@@ -49,42 +49,24 @@ class _OtherApiPageState extends State<OtherApiPage> {
             ),
           ),
           actions: <Widget>[
-            new TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: new Text('Cancel')
+            new FlatButton(
+              child: new Text('Cancel'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-            // new FlatButton(
-            //   child: new Text('Cancel'),
-            //   onPressed: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
-            new TextButton(
-                onPressed: () {
-                  MobpushPlugin.setAlias(_controller.text).then((Map<String, dynamic> aliasMap){
-                    String res = aliasMap['res'];
-                    String error = aliasMap['error'];
-                    // String errorCode = aliasMap['errorCode'];
-                    print(">>>>>>>>>>>>>>>>>>>>>>>>>>> setAlias -> res: $res error: $error");
-                  });
-                  Navigator.pop(context);
-                },
-                child: new Text('OK')
+            new FlatButton(
+              child: new Text("OK"),
+              onPressed: () {
+                MobpushPlugin.setAlias(_controller.text).then((Map<String, dynamic> aliasMap){
+                  String res = aliasMap['res'];
+                  String error = aliasMap['error'];
+                  String errorCode = aliasMap['errorCode'];
+                  print(">>>>>>>>>>>>>>>>>>>>>>>>>>> getAlias -> res: $res error: $error");
+                });
+                Navigator.pop(context);
+              },
             )
-            // new FlatButton(
-            //   child: new Text("OK"),
-            //   onPressed: () {
-            //     MobpushPlugin.setAlias(_controller.text).then((Map<String, dynamic> aliasMap){
-            //       String res = aliasMap['res'];
-            //       String error = aliasMap['error'];
-            //       String errorCode = aliasMap['errorCode'];
-            //       print(">>>>>>>>>>>>>>>>>>>>>>>>>>> getAlias -> res: $res error: $error");
-            //     });
-            //     Navigator.pop(context);
-            //   },
-            // )
           ],
         );
       }
@@ -118,42 +100,24 @@ class _OtherApiPageState extends State<OtherApiPage> {
             ),
           ),
           actions: <Widget>[
-            new TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: new Text('Cancel')
+            new FlatButton(
+              child: new Text('Cancel'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-            // new FlatButton(
-            //   child: new Text('Cancel'),
-            //   onPressed: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
-            new TextButton(
-                onPressed: () {
-                  List<String> tags = _controller.text.split(',');
-                  MobpushPlugin.addTags(tags).then((Map<String, dynamic> tagsMap){
-                    String res = tagsMap['res'];
-                    String error = tagsMap['error'];
-                    print(">>>>>>>>>>>>>>>>>>>>>>>>>>> addTags -> res: $res error: $error");
-                  });
-                  Navigator.pop(context);
-                },
-                child: new Text('OK')
+            new FlatButton(
+              child: new Text("OK"),
+              onPressed: () {
+                List tags = _controller.text.split(',');
+                MobpushPlugin.addTags(tags).then((Map<String, dynamic> tagsMap){
+                  String res = tagsMap['res'];
+                  String error = tagsMap['error'];
+                  print(">>>>>>>>>>>>>>>>>>>>>>>>>>> addTags -> res: $res error: $error");
+                });
+                Navigator.pop(context);
+              },
             )
-            // new FlatButton(
-            //   child: new Text("OK"),
-            //   onPressed: () {
-            //     List tags = _controller.text.split(',');
-            //     MobpushPlugin.addTags(tags).then((Map<String, dynamic> tagsMap){
-            //       String res = tagsMap['res'];
-            //       String error = tagsMap['error'];
-            //       print(">>>>>>>>>>>>>>>>>>>>>>>>>>> addTags -> res: $res error: $error");
-            //     });
-            //     Navigator.pop(context);
-            //   },
-            // )
           ],
         );
       }
@@ -187,42 +151,24 @@ class _OtherApiPageState extends State<OtherApiPage> {
             ),
           ),
           actions: <Widget>[
-            new TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: new Text('Cancel')
+            new FlatButton(
+              child: new Text('Cancel'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-            // new FlatButton(
-            //   child: new Text('Cancel'),
-            //   onPressed: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
-            new TextButton(
-                onPressed: () {
-                  List<String> tags = _controller.text.split(',');
-                  MobpushPlugin.deleteTags(tags).then((Map<String, dynamic> tagsMap){
-                    String res = tagsMap['res'];
-                    String error = tagsMap['error'];
-                    print(">>>>>>>>>>>>>>>>>>>>>>>>>>> deleteTags -> res: $res error: $error");
-                  });
-                  Navigator.pop(context);
-                },
-                child: new Text('OK')
+            new FlatButton(
+              child: new Text("OK"),
+              onPressed: () {
+                List tags = _controller.text.split(',');
+                MobpushPlugin.deleteTags(tags).then((Map<String, dynamic> tagsMap){
+                  String res = tagsMap['res'];
+                  String error = tagsMap['error'];
+                  print(">>>>>>>>>>>>>>>>>>>>>>>>>>> deleteTags -> res: $res error: $error");
+                });
+                Navigator.pop(context);
+              },
             )
-            // new FlatButton(
-            //   child: new Text("OK"),
-            //   onPressed: () {
-            //     List tags = _controller.text.split(',');
-            //     MobpushPlugin.deleteTags(tags).then((Map<String, dynamic> tagsMap){
-            //       String res = tagsMap['res'];
-            //       String error = tagsMap['error'];
-            //       print(">>>>>>>>>>>>>>>>>>>>>>>>>>> deleteTags -> res: $res error: $error");
-            //     });
-            //     Navigator.pop(context);
-            //   },
-            // )
           ],
         );
       }
@@ -256,40 +202,23 @@ class _OtherApiPageState extends State<OtherApiPage> {
             ),
           ),
           actions: <Widget>[
-            new TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text('Cancel')
+            new FlatButton(
+              child: new Text('Cancel'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-            // new FlatButton(
-            //   child: new Text('Cancel'),
-            //   onPressed: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
-            new TextButton(
-                onPressed: () {
-                  MobpushPlugin.bindPhoneNum(_controller.text).then((Map<String, dynamic> phoneMap){
-                    String res = phoneMap['res'];
-                    String error = phoneMap['error'];
-                    print(">>>>>>>>>>>>>>>>>>>>>>>>>>> bindPhoneNum -> res: $res error: $error");
-                  });
-                  Navigator.pop(context);
-                },
-                child: Text('OK')
+            new FlatButton(
+              child: new Text("OK"),
+              onPressed: () {
+                MobpushPlugin.bindPhoneNum(_controller.text).then((Map<String, dynamic> phoneMap){
+                  String res = phoneMap['res'];
+                  String error = phoneMap['error'];
+                  print(">>>>>>>>>>>>>>>>>>>>>>>>>>> bindPhoneNum -> res: $res error: $error");
+                });
+                Navigator.pop(context);
+              },
             )
-            // new FlatButton(
-            //   child: new Text("OK"),
-            //   onPressed: () {
-            //     MobpushPlugin.bindPhoneNum(_controller.text).then((Map<String, dynamic> phoneMap){
-            //       String res = phoneMap['res'];
-            //       String error = phoneMap['error'];
-            //       print(">>>>>>>>>>>>>>>>>>>>>>>>>>> bindPhoneNum -> res: $res error: $error");
-            //     });
-            //     Navigator.pop(context);
-            //   },
-            // )
           ],
         );
       }
@@ -328,34 +257,20 @@ class _OtherApiPageState extends State<OtherApiPage> {
             ),
           ),
           actions: <Widget>[
-            new TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text('Cancel')
+            new FlatButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-            // new FlatButton(
-            //   child: Text('Cancel'),
-            //   onPressed: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
-            new TextButton(
-                onPressed: () {
-                  int badge = int.parse(_controller.text);
-                  MobpushPlugin.setBadge(badge);
-                  Navigator.pop(context);
-                },
-                child: Text('OK')
+            new FlatButton(
+              child: new Text("OK"),
+              onPressed: () {
+                int badge = int.parse(_controller.text);
+                MobpushPlugin.setBadge(badge);
+                Navigator.pop(context);
+              },
             )
-            // new FlatButton(
-            //   child: new Text("OK"),
-            //   onPressed: () {
-            //     int badge = int.parse(_controller.text);
-            //     MobpushPlugin.setBadge(badge);
-            //     Navigator.pop(context);
-            //   },
-            // )
           ],
         );
       }
@@ -393,34 +308,20 @@ class _OtherApiPageState extends State<OtherApiPage> {
             ),
           ),
           actions: <Widget>[
-            new TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text('Cancel')
+            new FlatButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             ),
-            // new FlatButton(
-            //   child: Text('Cancel'),
-            //   onPressed: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
-            new TextButton(
-                onPressed: () {
-                  int type = int.parse(_controller.text);
-                  MobpushPlugin.setAPNsShowForegroundType(type);
-                  Navigator.pop(context);
-                },
-                child: Text('OK')
+            new FlatButton(
+              child: new Text("OK"),
+              onPressed: () {
+                int type = int.parse(_controller.text);
+                MobpushPlugin.setAPNsShowForegroundType(type);
+                Navigator.pop(context);
+              },
             )
-            // new FlatButton(
-            //   child: new Text("OK"),
-            //   onPressed: () {
-            //     int type = int.parse(_controller.text);
-            //     MobpushPlugin.setAPNsShowForegroundType(type);
-            //     Navigator.pop(context);
-            //   },
-            // )
           ],
         );
       }
@@ -441,18 +342,12 @@ class _OtherApiPageState extends State<OtherApiPage> {
             ),
           ),
           actions: <Widget>[
-            new TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: new Text("OK")
+            new FlatButton(
+              child: new Text("OK"),
+              onPressed: () {
+                Navigator.pop(context);
+              },
             )
-            // new FlatButton(
-            //   child: new Text("OK"),
-            //   onPressed: () {
-            //     Navigator.pop(context);
-            //   },
-            // )
           ],
         );
       }
@@ -465,7 +360,7 @@ class _OtherApiPageState extends State<OtherApiPage> {
       appBar: AppBar(
         title: Text('PushAPI接口'),
         iconTheme: IconThemeData(color: Colors.black),
-        textTheme: TextTheme(headline6: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+        textTheme: TextTheme(title: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
         backgroundColor: Colors.white,
         centerTitle: true,
       ),

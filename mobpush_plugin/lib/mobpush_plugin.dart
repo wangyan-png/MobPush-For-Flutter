@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'mobpush_local_notification.dart';
 
-typedef void EventHandler(dynamic event);
+typedef void EventHandler(Object event);
 
 class MobpushPlugin {
   static const MethodChannel _channel = const MethodChannel('mob.com/mobpush_plugin');
@@ -264,17 +264,4 @@ class MobpushPlugin {
     await _channel.invokeMethod('setAPNsShowForegroundType', {'type': type});
   }
 
-  /*
-  * 设置地区：regionId 默认0（国内），1:海外  (仅 iOS)
-  * */
-  static Future<void> setRegionId(int regionId) async {
-    await _channel.invokeMethod('setRegionId', {'regionId': regionId});
-  }
-
-  /*
-  * 注册appkey和appsecret, (仅 iOS)
-  * */
-  static Future<void> registerApp(String appKey, String appSecret) async {
-    await _channel.invokeMethod('registerApp', {'appKey': appKey, 'appSecret': appSecret});
-  }
 }

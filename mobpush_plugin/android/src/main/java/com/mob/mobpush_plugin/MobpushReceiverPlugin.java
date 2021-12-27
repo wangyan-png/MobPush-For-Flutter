@@ -2,22 +2,42 @@ package com.mob.mobpush_plugin;
 
 import android.content.Context;
 
+import com.mob.mobpush_plugin.req.SimulateRequest;
 import com.mob.pushsdk.MobPush;
+import com.mob.pushsdk.MobPushCallback;
 import com.mob.pushsdk.MobPushCustomMessage;
 import com.mob.pushsdk.MobPushNotifyMessage;
 import com.mob.pushsdk.MobPushReceiver;
 import com.mob.tools.utils.Hashon;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 import io.flutter.plugin.common.EventChannel;
+import io.flutter.plugin.common.MethodCall;
+import io.flutter.plugin.common.MethodChannel;
+import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
+import io.flutter.plugin.common.MethodChannel.Result;
+import io.flutter.plugin.common.PluginRegistry.Registrar;
 
-public class StreamHandlerImpl implements EventChannel.StreamHandler, OnRemoveReceiverListener {
+/**
+ * MobpushPlugin
+ */
+public class MobpushReceiverPlugin implements EventChannel.StreamHandler {
     private static MobPushReceiver mobPushReceiver;
 
     private Hashon hashon = new Hashon();
 
-    public StreamHandlerImpl() {
+    public static MobPushReceiver getMobPushReceiver(){
+        return mobPushReceiver;
+    }
+
+    /**
+     * Plugin registration.
+     */
+    public static void registerWith(Registrar registrar) {
+        final EventChannel channel = new EventChannel(registrar.messenger(), "mobpush_receiver");
+        channel.setStreamHandler(new MobpushReceiverPlugin());
     }
 
     private MobPushReceiver createMobPushReceiver(final EventChannel.EventSink event) {
@@ -68,13 +88,5 @@ public class StreamHandlerImpl implements EventChannel.StreamHandler, OnRemoveRe
     @Override
     public void onCancel(Object o) {
 
-    }
-
-    @Override
-    public void onRemoveReceiver() {
-        Log.e("", "onRemoveReceiver");
-        if (mobPushReceiver != null) {
-            MobPush.removePushReceiver(mobPushReceiver);
-        }
     }
 }
